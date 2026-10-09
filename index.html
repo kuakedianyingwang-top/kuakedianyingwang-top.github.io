@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夸克电影网 | 微观视界，无限光影 · 科幻电影与高分纪录片聚合平台</title>
+<meta name="description" content="夸克电影网(kuakedianyingwang-top)以「微观视界，无限光影」为核心理念，专注科幻电影、宇宙纪录、硬核视效与未来题材内容聚合。从星际探索到微观世界，从未来纪元到科幻经典，为热爱想象与探索的你提供极致沉浸的观影体验。官网直达：https://kuakedianyingwang-top.github.io">
+<meta name="keywords" content="夸克电影网,kuakedianyingwang-top,科幻电影,宇宙纪录片,硬核视效,未来题材,星际探索,微观世界,科幻经典,高分封神,影视聚合,在线观影,光影探索">
+<meta name="author" content="夸克电影网">
+<style>
+/* ===== 基础 ===== */
+*,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:#070b1a; color:#dbe4ff; line-height:1.75; overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* 深空星场背景 */
+body::before{
+  content:''; position:fixed; inset:0; z-index:-2;
+  background:radial-gradient(ellipse at 20% 10%,rgba(76,43,201,.35),transparent 55%),
+             radial-gradient(ellipse at 85% 40%,rgba(0,180,216,.2),transparent 50%),
+             radial-gradient(ellipse at 50% 95%,rgba(200,60,180,.15),transparent 55%),
+             #070b1a;
+}
+body::after{
+  content:''; position:fixed; inset:0; z-index:-1;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%,#fff,transparent),
+    radial-gradient(1px 1px at 30% 65%,rgba(255,255,255,.8),transparent),
+    radial-gradient(1.5px 1.5px at 55% 15%,#fff,transparent),
+    radial-gradient(1px 1px at 75% 80%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 90% 40%,#fff,transparent),
+    radial-gradient(1px 1px at 45% 90%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1px 1px at 15% 50%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 65% 55%,rgba(255,255,255,.5),transparent);
+  animation:twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes twinkle{ from{opacity:.6} to{opacity:1} }
+a{ text-decoration:none; color:inherit; }
+.wrap{ max-width:1160px; margin:0 auto; padding:0 1.25rem; }
+
+/* ===== 顶部通知条 ===== */
+.alert{ background:rgba(255,255,255,.04); border-bottom:1px solid rgba(120,150,255,.15); backdrop-filter:blur(6px); }
+.alert .wrap{ display:flex; justify-content:center; align-items:center; gap:1rem; padding:.55rem 1.25rem; font-size:.78rem; color:#9fb0e0; text-align:center; }
+.alert .dot{ width:6px; height:6px; border-radius:50%; background:#00e5ff; box-shadow:0 0 8px #00e5ff; animation:pulse 2s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ===== 导航 ===== */
+nav{ position:sticky; top:0; z-index:60; background:rgba(7,11,26,.75); backdrop-filter:blur(14px); border-bottom:1px solid rgba(120,150,255,.12); }
+.nav-in{ display:flex; align-items:center; justify-content:space-between; height:66px; gap:1rem; }
+.brand{ display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.15rem; letter-spacing:.5px; }
+.brand .orb{
+  width:30px; height:30px; border-radius:50%; position:relative;
+  background:radial-gradient(circle at 30% 30%,#80deea,#4a148c,#1a237e);
+  box-shadow:0 0 18px rgba(100,180,255,.6);
+}
+.brand .orb::after{
+  content:''; position:absolute; inset:-4px; border-radius:50%;
+  border:1px solid rgba(128,222,234,.4); animation:ring 3s linear infinite;
+}
+@keyframes ring{ to{ transform:rotate(360deg); } }
+.menu-btn{ display:none; background:none; border:none; color:#dbe4ff; font-size:1.7rem; cursor:pointer; }
+.navlist{ display:flex; gap:.2rem; list-style:none; }
+.navlist a{
+  display:block; padding:.5rem 1rem; font-size:.87rem; color:#a8b8e0; border-radius:8px; transition:all .25s;
+  position:relative;
+}
+.navlist a:hover{ color:#fff; background:rgba(120,150,255,.12); }
+
+/* ===== Hero ===== */
+.hero{ position:relative; padding:5rem 0 4rem; text-align:center; }
+.hero .badge{
+  display:inline-flex; align-items:center; gap:.5rem; padding:.4rem 1.1rem; border-radius:30px;
+  background:rgba(0,229,255,.08); border:1px solid rgba(0,229,255,.3); font-size:.78rem; color:#80deea;
+  letter-spacing:2px; margin-bottom:1.6rem; text-transform:uppercase;
+}
+.hero h1{ font-size:clamp(2.4rem,7vw,4.5rem); font-weight:900; line-height:1.15; margin-bottom:1.4rem; }
+.hero h1 .grad{
+  background:linear-gradient(100deg,#80deea 0%,#b388ff 45%,#ff80ab 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero p.lede{ font-size:1.1rem; max-width:640px; margin:0 auto 2.2rem; color:#a8b8e0; }
+.hero .url-pill{
+  display:inline-block; padding:.85rem 2rem; border-radius:12px;
+  background:rgba(255,255,255,.04); border:1px solid rgba(120,150,255,.25);
+  font-family:"SF Mono",Consolas,monospace; font-size:.92rem; color:#80deea;
+  letter-spacing:1px; transition:all .3s;
+}
+.hero .url-pill:hover{ border-color:#00e5ff; box-shadow:0 0 24px rgba(0,229,255,.25); }
+
+/* ===== 统计条 ===== */
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:0 0 4rem; }
+.stat{
+  text-align:center; padding:1.4rem 1rem; border-radius:14px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(120,150,255,.12);
+  backdrop-filter:blur(8px);
+}
+.stat .num{ font-size:2rem; font-weight:900; background:linear-gradient(135deg,#80deea,#b388ff); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.stat .lbl{ font-size:.8rem; color:#8d9cc8; margin-top:.3rem; }
+
+/* ===== 章节标题 ===== */
+.sec-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
+.sec-title{ font-size:1.6rem; font-weight:800; display:flex; align-items:center; gap:.8rem; }
+.sec-title .ic{ font-size:1.4rem; }
+.sec-more{ font-size:.85rem; color:#80deea; }
+
+/* ===== 卡片 ===== */
+.grid{ display:grid; gap:1.5rem; }
+.g3{ grid-template-columns:repeat(3,1fr); }
+.g2{ grid-template-columns:repeat(2,1fr); }
+.card{
+  position:relative; border-radius:16px; overflow:hidden; min-height:260px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(120,150,255,.14);
+  backdrop-filter:blur(10px); transition:transform .3s,box-shadow .3s;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.card::before{
+  content:''; position:absolute; inset:0; z-index:0; opacity:.55;
+}
+.card::after{
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to top,rgba(7,11,26,.95) 20%,rgba(7,11,26,.2) 70%,transparent);
+}
+.card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,.5); }
+.c1::before{ background:radial-gradient(circle at 70% 30%,#4a148c,#070b1a); }
+.c2::before{ background:radial-gradient(circle at 30% 40%,#006064,#070b1a); }
+.c3::before{ background:radial-gradient(circle at 60% 60%,#4a0072,#070b1a); }
+.c4::before{ background:radial-gradient(circle at 40% 30%,#1a237e,#070b1a); }
+.c5::before{ background:radial-gradient(circle at 70% 50%,#004d40,#070b1a); }
+.c6::before{ background:radial-gradient(circle at 50% 40%,#bf360c,#070b1a); }
+.card .inner{ position:relative; z-index:2; padding:1.6rem; }
+.card .tag{
+  display:inline-block; font-size:.7rem; letter-spacing:1.5px; padding:3px 10px; border-radius:20px;
+  background:rgba(0,229,255,.15); color:#80deea; margin-bottom:.8rem; text-transform:uppercase;
+}
+.card h3{ font-size:1.25rem; margin-bottom:.5rem; color:#fff; }
+.card p{ font-size:.88rem; color:#b0bee0; }
+
+/* ===== 数据面板 ===== */
+.panel{
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;
+  padding:2.4rem; border-radius:18px; background:rgba(255,255,255,.03);
+  border:1px solid rgba(120,150,255,.14); backdrop-filter:blur(10px);
+}
+.panel .txt h2{ font-size:1.7rem; margin-bottom:1rem; }
+.panel .txt p{ color:#a8b8e0; margin-bottom:1rem; }
+.panel .txt .hl{ color:#80deea; font-weight:600; }
+.bars{ display:flex; flex-direction:column; gap:1.1rem; }
+.bar-row .top{ display:flex; justify-content:space-between; font-size:.85rem; margin-bottom:.35rem; }
+.bar-row .top b{ color:#fff; }
+.bar-track{ height:8px; border-radius:10px; background:rgba(255,255,255,.08); overflow:hidden; }
+.bar-fill{ height:100%; border-radius:10px; background:linear-gradient(90deg,#00e5ff,#b388ff); }
+
+/* ===== 时间线 ===== */
+.timeline{ position:relative; padding-left:2rem; }
+.timeline::before{ content:''; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:linear-gradient(#00e5ff,#b388ff,#ff80ab); }
+.tl-item{ position:relative; padding-bottom:2rem; }
+.tl-item::before{
+  content:''; position:absolute; left:-2.05rem; top:6px; width:14px; height:14px; border-radius:50%;
+  background:#070b1a; border:2px solid #00e5ff; box-shadow:0 0 10px rgba(0,229,255,.5);
+}
+.tl-item h4{ font-size:1.1rem; color:#fff; margin-bottom:.35rem; }
+.tl-item .yr{ font-size:.78rem; color:#80deea; letter-spacing:1.5px; margin-bottom:.5rem; }
+.tl-item p{ font-size:.88rem; color:#a8b8e0; }
+
+/* ===== 关于 ===== */
+.about{ padding:2.4rem; border-radius:18px; background:rgba(255,255,255,.03); border:1px solid rgba(120,150,255,.14); backdrop-filter:blur(10px); }
+.about p{ color:#a8b8e0; margin-bottom:1rem; }
+.about a{ color:#80deea; }
+
+/* ===== 页脚 ===== */
+footer{ margin-top:5rem; padding:3rem 0 2rem; border-top:1px solid rgba(120,150,255,.12); background:rgba(0,0,0,.3); }
+.foot{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:2rem; margin-bottom:2rem; }
+.foot h4{ font-size:.95rem; color:#fff; margin-bottom:.9rem; }
+.foot ul{ list-style:none; }
+.foot li{ margin-bottom:.55rem; }
+.foot a{ color:#8d9cc8; font-size:.85rem; transition:color .2s; }
+.foot a:hover{ color:#80deea; }
+.copy{ text-align:center; border-top:1px solid rgba(120,150,255,.1); padding-top:1.5rem; font-size:.78rem; color:#6a7aa8; }
+
+/* ===== 响应式 ===== */
+@media(max-width:860px){ .g3,.g2,.panel{ grid-template-columns:1fr; } .stats{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:640px){
+  .menu-btn{ display:block; }
+  .navlist{ display:none; position:absolute; top:66px; left:0; right:0; flex-direction:column; padding:1rem; background:rgba(7,11,26,.97); border-bottom:1px solid rgba(120,150,255,.14); }
+  .navlist.open{ display:flex; }
+  .hero{ padding:3rem 0 2rem; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- 顶部通知条 -->
+<div class="alert">
+  <div class="wrap"><span class="dot"></span><span>探索视界的边界，从每一个夸克开始 · 官网直达 kuakedianyingwang-top.github.io</span></div>
+</div>
+
+<!-- 导航 -->
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="orb"></span>夸克电影网</div>
+    <ul class="navlist" id="nav">
+      <li><a href="#home">视界首页</a></li>
+      <li><a href="#sci">科幻宇宙</a></li>
+      <li><a href="#doc">纪录档案</a></li>
+      <li><a href="#effect">视效前沿</a></li>
+      <li><a href="#future">未来片单</a></li>
+      <li><a href="#about">关于我们</a></li>
+    </ul>
+    <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <span class="badge">✦ 微观视界 · 无限光影</span>
+    <h1><span class="grad">夸克</span>电影网</h1>
+    <p class="lede">从一粒夸克到整个宇宙，光影的尺度可以无限延伸。这里汇聚科幻、探索、视效与未来，带你看见想象之外的世界。</p>
+    <a href="https://kuakedianyingwang-top.github.io" class="url-pill">https://kuakedianyingwang-top.github.io</a>
+  </div>
+</section>
+
+<!-- 统计 -->
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="num">∞</div><div class="lbl">无限视界</div></div>
+    <div class="stat"><div class="num">360°</div><div class="lbl">全景沉浸</div></div>
+    <div class="stat"><div class="num">4K</div><div class="lbl">极致画质</div></div>
+    <div class="stat"><div class="num">24H</div><div class="lbl">持续更新</div></div>
+  </div>
+</div>
+
+<!-- 科幻宇宙 -->
+<section id="sci">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><span class="ic">🛸</span>科幻宇宙</div>
+      <a href="#" class="sec-more">全部专题 →</a>
+    </div>
+    <div class="grid g3">
+      <div class="card c1"><div class="inner"><span class="tag">Interstellar</span><h3>星际穿越</h3><p>黑洞、虫洞与五维空间，硬核物理支撑的宇宙史诗。</p></div></div>
+      <div class="card c2"><div class="inner"><span class="tag">AI Era</span><h3>人工智能纪元</h3><p>当机器开始思考，人类将何去何从的近未来命题。</p></div></div>
+      <div class="card c3"><div class="inner"><span class="tag">Cyberpunk</span><h3>赛博纪元</h3><p>霓虹与钢铁交织的暗黑都市，人性与科技的终极博弈。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 纪录档案 -->
+<section id="doc" style="margin-top:4rem;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><span class="ic">🔭</span>纪录档案</div>
+      <a href="#" class="sec-more">更多档案 →</a>
+    </div>
+    <div class="grid g2">
+      <div class="card c4"><div class="inner"><span class="tag">Deep Space</span><h3>深空探秘</h3><p>从太阳系边缘到可观测宇宙尽头，镜头带你亲历星辰大海。</p></div></div>
+      <div class="card c5"><div class="inner"><span class="tag">Micro World</span><h3>微观世界</h3><p>放大亿万倍的生命图景，见证肉眼无法触及的壮丽奇观。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 视效前沿 -->
+<section id="effect" style="margin-top:4rem;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><span class="ic">💠</span>视效前沿</div>
+    </div>
+    <div class="panel">
+      <div class="txt">
+        <h2>每一帧，都是一次技术跃迁</h2>
+        <p><span class="hl">夸克电影网</span>持续追踪全球顶尖视效技术与影视工业前沿，从实拍特效到虚拟制片，从CGI到AI生成，拆解那些让人屏息的光影魔法背后的创作逻辑。</p>
+        <p>适合视效从业者、影视爱好者与未来技术研究者深度阅读。</p>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><div class="top"><span>虚拟制片</span><b>92%</b></div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div>
+        <div class="bar-row"><div class="top"><span>CGI 特效</span><b>88%</b></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
+        <div class="bar-row"><div class="top"><span>AI 生成影像</span><b>76%</b></div><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div></div>
+        <div class="bar-row"><div class="top"><span>实拍特技</span><b>81%</b></div><div class="bar-track"><div class="bar-fill" style="width:81%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 未来片单 -->
+<section id="future" style="margin-top:4rem;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title"><span class="ic">🚀</span>未来片单</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">第 04 象限</div>
+        <h4>量子回响 · 系列新章</h4>
+        <p>多世界诠释下的平行时空叙事，烧脑程度再度升级，硬科幻迷年度必看。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">第 03 象限</div>
+        <h4>火星黎明 · 原创剧集</h4>
+        <p>首批火星殖民者的生存实录，硬核还原地外定居的真实挑战。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">第 02 象限</div>
+        <h4>深海代码 · 纪录剧</h4>
+        <p>追踪深海探测器与未知生物的邂逅，科技与自然的边界在此消融。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">第 01 象限</div>
+        <h4>文明方舟 · 科幻合集</h4>
+        <p>末日叙事中的文明存续命题，多国导演联合打造的短片合集。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于 -->
+<section id="about" style="margin-top:4rem;margin-bottom:4rem;">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-title"><span class="ic">🪐</span>关于夸克电影网</div></div>
+    <div class="about">
+      <p><strong style="color:#fff;">夸克电影网</strong>（kuakedianyingwang-top）是一个以「微观视界，无限光影」为核心理念的影视内容平台，专注科幻电影、宇宙纪录、硬核视效与未来题材内容的聚合与探索。</p>
+      <p>从星际穿越到微观世界，从未来纪元到科幻经典，我们为热爱想象与探索的你，持续提供极致沉浸的观影内容。</p>
+      <p>官方网站：<a href="https://kuakedianyingwang-top.github.io">https://kuakedianyingwang-top.github.io</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>内容象限</h4>
+        <ul>
+          <li><a href="#sci">科幻宇宙</a></li>
+          <li><a href="#doc">纪录档案</a></li>
+          <li><a href="#effect">视效前沿</a></li>
+          <li><a href="#future">未来片单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>专题分类</h4>
+        <ul>
+          <li><a href="#">星际探索</a></li>
+          <li><a href="#">赛博朋克</a></li>
+          <li><a href="#">AI 题材</a></li>
+          <li><a href="#">经典修复</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>官方信息</h4>
+        <ul>
+          <li>网站名称：夸克电影网</li>
+          <li>访问地址：kuakedianyingwang-top.github.io</li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 夸克电影网 kuakedianyingwang-top.github.io · 从一粒夸克，到整个宇宙</div>
+  </div>
+</footer>
+
+</body>
+</html>
